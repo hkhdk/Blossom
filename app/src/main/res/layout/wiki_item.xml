@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rp_bg_outline"
+    android:padding="@dimen/corner_middle"
+    android:clickable="true"
+    android:layout_marginVertical="4dp"
+    android:transitionName="card">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="66dp"
+        android:layout_height="66dp"
+        android:background="@drawable/rp_bg_outline"
+        android:scaleType="centerCrop"
+        android:clickable="true"
+        android:transitionName="img"
+        tools:src="@drawable/lvluo"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?textAppearanceBody1"
+        android:layout_marginStart="@dimen/padding_widget_group"
+        android:layout_toEndOf="@id/img"
+        tools:text="绿萝"/>
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_marginTop="@dimen/padding_widget_mate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?textAppearanceBody2"
+        android:layout_marginStart="@dimen/padding_widget_group"
+        android:layout_below="@id/name"
+        android:layout_toEndOf="@id/img"
+        tools:text="天南星科麒麟叶属植物"/>
+
+</RelativeLayout>

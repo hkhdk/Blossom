@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Fleur</string>
+
+    <string name="bluetooth_disabled">蓝牙已关闭</string>
+    <string name="device_disconnected">设备未连接</string>
+    <string name="device_connecting">正在连接…</string>
+    <string name="connected">已连接</string>
+    <string name="temperature">温度</string>
+    <string name="soil">土壤湿度</string>
+    <string name="humidity">湿度</string>
+    <string name="battery">设备电量</string>
+    <string name="na">N/A</string>
+
+    <string name="go_to_wiki">查看百科</string>
+
+    <string name="suitable_temp">适宜温度</string>
+    <string name="suitable_humidity">适宜温度</string>
+
+    <string name="search_hint">搜索植物</string>
+
+    <string name="bond_tip">找不到设备？前往配对</string>
+
+    <string name="connect_successful">连接成功</string>
+
+    <string name="connection_tip">连接设备以获取状态</string>
+
+    <string name="bluetooth_permission_failed">申请蓝牙权限失败，请手动设置蓝牙</string>
+
+    <string name="plant_detail">
+高大藤本，茎攀援；多分枝，枝悬垂。幼枝鞭状，细长；叶柄长8-10厘米，两侧具鞘达顶部；鞘革质，宿存，下部每侧宽近1厘米，向上渐狭；下部叶片大，长5-10厘米，上部的长6-8厘米。成熟枝上叶柄粗壮，长30-40厘米，叶鞘长，叶片薄革质，翠绿色。绿萝要求在温度较高（冬季室温不能低于10℃，否则易发生黄叶、落叶现象）、散射光较强的环境中生长。若长期过于阴暗，节间会细长无力，叶片亦变薄、变淡，失去光泽。用培养土直接盆栽，每盆3-5根，浇透水，植于阴凉通风处，保持盆土湿润，一月左右即可生根发芽，当年就能长成具有观赏价值的植株光照：把绿萝摆放到室内光照最好的地方，或在正午时搬到密封的阳台上晒太阳。同时，温度低的时候要尽量少开窗，因为极短的时间内，叶片就可能被冻伤。温度:在北方，室温10℃以上，绿萝可以安全过冬，室温在20℃以上，绿萝可以正常生长。一般家庭达到这个温度问题不大，需要注意的是要避免温差过大，同时也要注意叶子不要靠近供暖设备浇水：秋冬季的浇水量应根据室温严格控制。供暖之前，温度较低，植株的土壤蒸发较慢，要减少浇水，水量应控制在原来的1/4-1/2之间。即使供暖之后，浇水也不可过勤，浇水要少向盆中浇，应由棕丝渗水。另外，还应向棕柱的气生根生长处喷水，以减少因蒸发过快引起根部吸水不足。冬季浇的水以晾晒过一天后的水比较好，水过凉容易损伤根部。水养时，水量不可过多，淹没根部即可，水量过多时容易腐烂茎叶。
+    </string>
+</resources>

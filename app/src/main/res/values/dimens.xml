@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_widget_mate">12dp</dimen>
+    <dimen name="padding_widget_group">16dp</dimen>
+    <dimen name="padding_widget_group_half">8dp</dimen>
+    <dimen name="corner_middle">16dp</dimen>
+    <dimen name="corner_middle_inv">-16dp</dimen>
+    <dimen name="screen_padding_hor">16dp</dimen>
+    <dimen name="screen_padding_vet">16dp</dimen>
+    <dimen name="content_padding_hor">20dp</dimen>
+    <dimen name="content_padding_vet">12dp</dimen>
+</resources>

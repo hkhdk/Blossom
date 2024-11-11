@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pass_dark">#0c7435</color>
+
+    <color name="pass">#13a94f</color>
+
+    <color name="control">#8a000000</color>
+
+    <color name="day">#59CBED</color>
+    <color name="night">#375CA6</color>
+
+    <color name="warn">#FFDBDB</color>
+    <color name="warn_dark">#C31E1E</color>
+
+    <color name="wood">#7C5C44</color>
+    
+    <color name="accent">#13CDBF</color>
+    <color name="accent_dark">#06AC9F</color>
+    <color name="cation">#eda200</color>
+    <color name="divider">#1a000000</color>
+    <color name="disabled">#3a000000</color>
+</resources>

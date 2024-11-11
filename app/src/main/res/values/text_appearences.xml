@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Brand" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="fontFamily">@font/pacifico_regular</item>
+    </style>
+</resources>

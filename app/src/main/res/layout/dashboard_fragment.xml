@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/screen_padding_hor">
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textAppearance="@style/Brand"
+            android:layout_marginTop="@dimen/screen_padding_vet"
+            app:drawableStartCompat="@drawable/fleur"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/search"
+            android:transitionName="search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/content_padding_hor"
+            android:paddingVertical="@dimen/content_padding_vet"
+            android:background="@drawable/rp_bg_outline"
+            android:layout_marginTop="@dimen/content_padding_vet"
+            android:textColor="@color/control"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_name"
+            android:drawablePadding="@dimen/padding_widget_mate"
+            android:textAppearance="?textAppearanceSubtitle1"
+            android:text="@string/search_hint"
+            app:drawableStartCompat="@drawable/search"
+            app:drawableTint="@color/control" />
+
+        <TextView
+            android:id="@+id/bluetoothState"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rp_bg_outline"
+            android:drawablePadding="@dimen/padding_widget_mate"
+            android:layout_marginTop="@dimen/padding_widget_group"
+            android:layout_marginEnd="@dimen/padding_widget_mate"
+            android:paddingHorizontal="@dimen/content_padding_hor"
+            android:paddingVertical="@dimen/content_padding_vet"
+            android:transitionName="devices"
+            android:textAppearance="?textAppearanceSubtitle1"
+            app:drawableStartCompat="@drawable/sp_dot"
+            app:layout_constraintEnd_toStartOf="@id/wiki"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search"
+            tools:drawableTint="@color/cation"
+            tools:text="@string/device_disconnected" />
+
+        <TextView
+            android:id="@+id/wiki"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:paddingHorizontal="@dimen/content_padding_vet"
+            android:paddingVertical="@dimen/content_padding_vet"
+            android:background="@drawable/rp_bg_outline"
+            android:gravity="center"
+            android:text="@string/go_to_wiki"
+            app:layout_constraintTop_toTopOf="@id/bluetoothState"
+            app:layout_constraintBottom_toBottomOf="@id/bluetoothState"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:drawableStartCompat="@drawable/next"
+            app:drawableTint="@color/control" />
+
+        <TextView
+            android:id="@+id/connection_tip"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/corner_middle"
+            android:layout_marginTop="@dimen/padding_widget_group"
+            android:background="@drawable/bg_outline_dashed"
+            android:text="@string/connection_tip"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bluetoothState"
+            app:drawableTopCompat="@drawable/ic_connect"
+            app:drawableTint="@color/disabled"
+            tools:visibility="invisible"/>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/state_cards"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="wiki, temperature, battery, battery_text, battery_text_tip, humidity, soil, rec_bg"
+            android:visibility="visible"/>
+
+        <LinearLayout
+            android:id="@+id/temperature"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/padding_widget_group"
+            android:layout_marginRight="@dimen/padding_widget_group_half"
+            android:background="@drawable/rp_bg_outline"
+            android:gravity="bottom"
+            android:padding="@dimen/corner_middle"
+            android:clickable="true"
+            android:orientation="vertical"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/battery"
+            app:layout_constraintTop_toBottomOf="@id/bluetoothState"
+            android:backgroundTint="@color/night">
+
+            <ImageView
+                android:id="@+id/timeIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:tint="@color/cation"
+                tools:src="@drawable/sun"/>
+
+            <TextView
+                android:id="@+id/temp_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/na"
+                android:textColor="@android:color/white"
+                android:textAppearance="?textAppearanceHeadline3" />
+
+            <TextView
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/temperature"/>
+
+        </LinearLayout>
+
+        <com.julic20s.fleur.view.WaveView
+            android:id="@+id/battery"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clickable="true"
+            android:background="@drawable/rp_bg_outline"
+            android:backgroundTint="@color/accent_dark"
+            android:layout_marginLeft="@dimen/padding_widget_group_half"
+            app:layout_constraintTop_toTopOf="@id/temperature"
+            app:layout_constraintBottom_toBottomOf="@id/temperature"
+            app:layout_constraintLeft_toRightOf="@id/temperature"
+            app:layout_constraintRight_toRightOf="parent"
+            app:wave_color="@color/accent"
+            app:progress="50"/>
+
+        <TextView
+            android:id="@+id/battery_text_tip"
+            android:layout_width="0dp"
+            android:textColor="@android:color/white"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/corner_middle"
+            android:paddingHorizontal="@dimen/corner_middle"
+            android:gravity="bottom"
+            app:layout_constraintLeft_toLeftOf="@id/battery"
+            app:layout_constraintRight_toRightOf="@id/battery"
+            app:layout_constraintBottom_toBottomOf="@id/battery"
+            android:text="@string/battery"/>
+
+        <TextView
+            android:id="@+id/battery_text"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textColor="@android:color/white"
+            android:gravity="bottom"
+            android:text="@string/na"
+            android:textAppearance="?textAppearanceHeadline3"
+            android:layout_marginStart="@dimen/corner_middle"
+            app:layout_constraintBottom_toTopOf="@+id/battery_text_tip"
+            app:layout_constraintLeft_toLeftOf="@id/battery"
+            app:layout_constraintRight_toRightOf="@id/battery"
+            app:layout_constraintTop_toTopOf="@id/battery" />
+
+        <LinearLayout
+            android:id="@+id/humidity"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/padding_widget_group"
+            android:background="@drawable/rp_bg_outline_water"
+            android:gravity="bottom"
+            android:padding="@dimen/corner_middle"
+            android:clickable="true"
+            android:orientation="vertical"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/temperature"
+            app:layout_constraintTop_toBottomOf="@id/temperature">
+
+            <TextView
+                android:id="@+id/humidity_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="@string/na"
+                android:textAppearance="?textAppearanceHeadline3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:text="@string/humidity"/>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/soil"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/padding_widget_group"
+            android:background="@drawable/rp_bg_outline"
+            android:backgroundTint="@color/wood"
+            android:clickable="true"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintLeft_toLeftOf="@id/battery"
+            app:layout_constraintRight_toRightOf="@id/battery"
+            app:layout_constraintTop_toBottomOf="@id/temperature">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/dirt"
+                android:padding="@dimen/corner_middle"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="bottom"
+                android:padding="@dimen/corner_middle">
+
+                <TextView
+                    android:id="@+id/soil_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/na"
+                    android:textColor="@android:color/white"
+                    android:textAppearance="?textAppearanceHeadline3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:text="@string/soil"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rec_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/corner_middle"
+            android:background="@drawable/bg_outline"
+            android:layout_marginTop="@dimen/padding_widget_group"
+            app:layout_constraintTop_toBottomOf="@id/soil">
+
+            <ImageView
+                android:id="@+id/suitable_temp_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/sun"
+                app:tint="@color/cation"
+                app:layout_constraintTop_toTopOf="@id/rec_bg"
+                app:layout_constraintStart_toStartOf="@id/rec_bg"/>
+
+            <TextView
+                android:id="@+id/suitable_temp_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/suitable_temp"
+                android:layout_marginStart="@dimen/padding_widget_mate"
+                app:layout_constraintStart_toEndOf="@id/suitable_temp_icon"
+                app:layout_constraintTop_toTopOf="@id/suitable_temp_icon"
+                app:layout_constraintBottom_toBottomOf="@id/suitable_temp_icon"/>
+
+            <ProgressBar
+                android:id="@+id/suitable_temp_pro"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:progressTint="@color/cation"
+                android:layout_marginEnd="@dimen/padding_widget_mate"
+                android:layout_marginStart="@dimen/padding_widget_mate"
+                android:indeterminate="false"
+                android:progress="52"
+                android:backgroundTint="@color/divider"
+                android:progressBackgroundTint="@color/divider"
+                app:layout_constraintStart_toEndOf="@id/suitable_temp_text"
+                app:layout_constraintEnd_toStartOf="@id/suitable_temp_val"
+                app:layout_constraintTop_toTopOf="@id/suitable_temp_text"
+                app:layout_constraintBottom_toBottomOf="@id/suitable_temp_text"/>
+
+            <TextView
+                android:id="@+id/suitable_temp_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18~25℃"
+                android:layout_marginEnd="@dimen/corner_middle"
+                app:layout_constraintTop_toTopOf="@id/suitable_temp_text"
+                app:layout_constraintBottom_toBottomOf="@id/suitable_temp_text"
+                app:layout_constraintEnd_toEndOf="@id/rec_bg"/>
+
+            <ImageView
+                android:id="@+id/suitable_humidity_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/padding_widget_mate"
+                android:src="@drawable/water"
+                app:tint="@color/day"
+                app:layout_constraintTop_toBottomOf="@id/suitable_temp_icon"
+                app:layout_constraintStart_toStartOf="@id/rec_bg"/>
+
+            <TextView
+                android:id="@+id/suitable_humidity_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/suitable_humidity"
+                android:layout_marginStart="@dimen/padding_widget_mate"
+                app:layout_constraintStart_toEndOf="@id/suitable_humidity_icon"
+                app:layout_constraintTop_toTopOf="@id/suitable_humidity_icon"
+                app:layout_constraintBottom_toBottomOf="@id/suitable_humidity_icon"/>
+
+            <ProgressBar
+                android:id="@+id/suitable_humidity_pro"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:progressTint="@color/day"
+                android:layout_marginEnd="@dimen/padding_widget_mate"
+                android:layout_marginStart="@dimen/padding_widget_mate"
+                android:indeterminate="false"
+                android:progress="52"
+                android:backgroundTint="@color/divider"
+                android:progressBackgroundTint="@color/divider"
+                app:layout_constraintStart_toEndOf="@id/suitable_humidity_text"
+                app:layout_constraintEnd_toStartOf="@id/suitable_humidity_val"
+                app:layout_constraintTop_toTopOf="@id/suitable_humidity_text"
+                app:layout_constraintBottom_toBottomOf="@id/suitable_humidity_text"/>
+
+            <TextView
+                android:id="@+id/suitable_humidity_val"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50~70%"
+                android:layout_marginEnd="@dimen/corner_middle"
+                app:layout_constraintTop_toTopOf="@id/suitable_humidity_text"
+                app:layout_constraintBottom_toBottomOf="@id/suitable_humidity_text"
+                app:layout_constraintEnd_toEndOf="@id/rec_bg"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
